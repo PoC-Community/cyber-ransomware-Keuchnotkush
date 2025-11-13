@@ -13,11 +13,11 @@
 Test(get_new_path_name, test_get_new_path_name)
 {
     char *parentPath = "/home";
-    char *currentPath = "naadi/";
+    char *currentPath = "kalikush/";
     char test[MAX_FILEPATH];
 
     get_new_path_name(parentPath, test, currentPath);
-    cr_assert_str_eq(test, "/home/naadi/");
+    cr_assert_str_eq(test, "/home/kalikush/");
 }
 
 Test(add_file_extension, test_add_file_extension)
